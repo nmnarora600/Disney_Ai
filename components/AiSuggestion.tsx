@@ -5,7 +5,7 @@ import { Typewriter } from 'nextjs-simple-typewriter';
 
 
 const fetcher = (term: string) =>
-  fetch("/api/suggestions?term=" + term).then((res) => res.json());
+  fetch(`/api/suggestions?term=` + term).then((res) => res.json());
 
 const AISuggestion = ({ term }: { term: string }) => {
 
@@ -29,7 +29,6 @@ const AISuggestion = ({ term }: { term: string }) => {
 
     if (error) return <>Error...</>;
     if (!data) return <>No data...</>;
-   
     return (
       <>
         <div className="animate-pulse rounded-full bg-gradient-to-l flex md:mt-0 md:mb-16 mt-0 mb-auto from-white h-10 w-10 border-2 flex-shrink-0 border-white" />
